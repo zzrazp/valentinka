@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>no</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="no-page">
+<img src="rain.gif" class="bg-gif1" alt="">
+
+  
+  <audio autoplay loop>
+    <source src="fixyou.flac" type="audio/mpeg">
+  </audio>
+
+  <div id="sad-text">ubila se bom</div>
+
+  <script>
+    const text = document.getElementById("sad-text");
+
+    document.addEventListener("mousemove", (e) => {
+      text.style.left = e.pageX + "px";
+      text.style.top = e.pageY + "px";
+    });
+  </script>
+
+</body>
+</html>
