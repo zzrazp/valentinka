@@ -1,0 +1,62 @@
+<head>
+<title>Valentinsko Sporocilo</title>
+<link rel="stylesheet" href="style.css">
+<meta charset='UTF-8'>
+<meta name="description" content="Postavlja se mi neko vprasanje..">
+<meta name="author" content="Skrivna Obozevalka">
+</head>
+<body>
+<h1> Ali bi bila moja valentinka...</h1>
+<img src="minions-heart.gif" height="X" width="X">
+<h2>
+  <a href="yes.html" class="icon-btn" id="yes-btn">
+    <img src="yes.png" alt="Yes" height="70" width="70">
+  </a>
+
+  
+</h2>
+<a href="no.html" class="icon-btn" id="no-btn">
+  <img src="no.jpg" alt="No" height="60" width="60">
+</a>
+<script>
+  const noBtn = document.getElementById("no-btn");
+  const noImg = noBtn.querySelector("img");
+
+  const yesBtn = document.getElementById("yes-btn");
+  const yesImg = yesBtn.querySelector("img");
+
+  let dodgeCount = 0;
+  const maxDodges = 5;
+
+  noBtn.addEventListener("mouseover", () => {
+    if (dodgeCount >= maxDodges) {
+      return;
+    }
+
+    // Move NO button
+    const maxX = window.innerWidth - noBtn.offsetWidth;
+    const maxY = window.innerHeight - noBtn.offsetHeight;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    dodgeCount++;
+
+ 
+    const scale = 1 + dodgeCount * 0.15;
+    yesImg.style.transform = `scale(${scale})`;
+
+    
+    if (dodgeCount === maxDodges) {
+      noImg.src = "okay.png";
+      noImg.alt = "Fine 😔";
+    }
+  });
+</script>
+
+
+
+</body>
